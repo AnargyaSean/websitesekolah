@@ -1,0 +1,498 @@
+/* =========================================================
+   GLOBAL.CSS
+   File CSS utama untuk semua halaman website SMA Negeri 3 Denpasar.
+   Semua halaman HTML tinggal memanggil file ini, jadi tidak perlu
+   menulis style yang sama berulang-ulang di tiap halaman.
+========================================================= */
+
+/* --- Font dari Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* --- Variabel warna & ukuran (biar gampang diganti-ganti) --- */
+:root {
+  --biru-tua: #1e3a8a;      /* warna utama */
+  --biru-terang: #2563eb;   /* warna aksen / tombol */
+  --emas: #f59e0b;          /* warna aksen kedua (khas Bali) */
+  --teks-gelap: #0f172a;
+  --teks-abu: #475569;
+  --bg-abu: #f8fafc;
+  --putih: #ffffff;
+  --garis: #e2e8f0;
+  --radius: 10px;
+}
+
+/* --- Reset dasar --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--teks-gelap);
+  background-color: var(--bg-abu);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+  background: var(--putih);
+  border-bottom: 1px solid var(--garis);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.navbar-brand .nama-sekolah {
+  font-weight: 700;
+  color: var(--biru-tua);
+  font-size: 1.05rem;
+}
+
+.navbar-brand .slogan-sekolah {
+  font-size: 0.7rem;
+  color: var(--teks-abu);
+  letter-spacing: 0.05em;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-menu a {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--teks-abu);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-menu a:hover {
+  color: var(--biru-tua);
+}
+
+.navbar-menu a.aktif {
+  color: var(--biru-terang);
+  border-bottom-color: var(--biru-terang);
+}
+
+.btn-ppdb {
+  background: var(--emas);
+  color: var(--teks-gelap);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+}
+
+/* =========================================================
+   TOMBOL (BUTTON)
+========================================================= */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--putih);
+  color: var(--biru-tua);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--putih);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO (Banner atas halaman)
+========================================================= */
+.hero {
+  background: linear-gradient(135deg, var(--biru-tua), #2a4bb0);
+  color: var(--putih);
+  padding: 60px 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--emas);
+  color: var(--teks-gelap);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin-bottom: 24px;
+  color: #dbe4ff;
+}
+
+.hero-tombol {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Hero versi lebih kecil, dipakai di halaman jurusan & kontak */
+.hero-kecil {
+  background: var(--putih);
+  border-bottom: 1px solid var(--garis);
+  padding: 40px 0;
+}
+
+.hero-kecil h1 {
+  color: var(--biru-tua);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.hero-kecil p {
+  color: var(--teks-abu);
+  max-width: 650px;
+}
+
+/* =========================================================
+   SECTION & JUDUL
+========================================================= */
+.section {
+  padding: 50px 0;
+}
+
+.section-judul {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.section-judul span.label {
+  color: var(--biru-terang);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.section-judul h2 {
+  color: var(--biru-tua);
+  font-size: 1.6rem;
+  margin-top: 6px;
+}
+
+/* =========================================================
+   CARD (Kartu)
+========================================================= */
+.card {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 800px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Kartu statistik singkat (dipakai di beranda) */
+.kartu-statistik .angka {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--biru-tua);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.kartu-statistik p {
+  font-size: 0.85rem;
+  color: var(--teks-abu);
+}
+
+/* Kartu program jurusan */
+.kartu-jurusan .badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: var(--biru-tua);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.kartu-jurusan h3 {
+  color: var(--biru-tua);
+  margin-bottom: 10px;
+}
+
+.kartu-jurusan p {
+  color: var(--teks-abu);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.kartu-jurusan ul li {
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-top: 1px solid var(--garis);
+}
+
+.kartu-jurusan ul li:first-child {
+  border-top: none;
+}
+
+/* =========================================================
+   TABEL
+========================================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--garis);
+  font-size: 0.9rem;
+}
+
+th {
+  background: #eef2ff;
+  color: var(--biru-tua);
+}
+
+tfoot td {
+  font-weight: 700;
+  background: #f1f5f9;
+  border-bottom: none;
+}
+
+.text-tengah { text-align: center; }
+.text-kanan  { text-align: right; }
+
+/* =========================================================
+   FORM (Kontak)
+========================================================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--biru-tua);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--biru-terang);
+}
+
+.kotak-info {
+  background: #f1f5f9;
+  border-left: 4px solid var(--biru-terang);
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: var(--teks-abu);
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   INFO KONTAK (Halaman Kontak)
+========================================================= */
+.info-kontak .item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--garis);
+}
+
+.info-kontak .item:first-child {
+  border-top: none;
+}
+
+.info-kontak .item .judul {
+  font-weight: 600;
+  color: var(--biru-tua);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.info-kontak .item p, .info-kontak .item a {
+  font-size: 0.88rem;
+  color: var(--teks-abu);
+}
+
+.jam-buka {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-top: 1px solid var(--garis);
+}
+
+.jam-buka:first-child { border-top: none; }
+.jam-buka.tutup span { color: #dc2626; font-weight: 600; }
+
+/* =========================================================
+   CTA (Ajakan Daftar)
+========================================================= */
+.cta {
+  background: var(--biru-tua);
+  color: var(--putih);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cta h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.cta p {
+  color: #cdd8ff;
+  max-width: 500px;
+}
+
+.cta-tombol {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  background: var(--biru-tua);
+  color: var(--putih);
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+footer .footer-copy p:first-child {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+footer .footer-copy p:last-child {
+  font-size: 0.8rem;
+  color: #c7d2fe;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
